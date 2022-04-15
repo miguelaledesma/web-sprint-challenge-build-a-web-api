@@ -21,7 +21,7 @@ async function validateAction (req, res, next){
     if(!project_id){
         res.status(400).json({message: 'missing required project id'})
     }
-    if(!notes || !notes.trim){
+    else if(!notes || !notes.trim){
         res.status(400).json({message: 'missing required project notes'})
     } else{
         req.project_id = project_id
