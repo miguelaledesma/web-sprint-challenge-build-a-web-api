@@ -26,6 +26,14 @@ router.post('/', validateAction, validateActionId, (req, res) => {
     })
 })
 
+router.put('/:id', validateAction,validateActionId,  (req, res) => {
+    Actions.update(req.params.id, req.body)
+    .then(updatedAction => {
+        res.status(200).json(updatedAction)
+    })
+
+})
+
 
 
 
