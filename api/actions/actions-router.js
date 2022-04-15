@@ -34,6 +34,16 @@ router.put('/:id', validateAction,validateActionId,  (req, res) => {
 
 })
 
+router.delete("/:id", validateActionId, (req, res, next) => {
+    
+     Actions.remove(req.params.id)
+     .then(action => {
+        res.json(action)
+     })
+        
+    } 
+)
+
 
 
 
